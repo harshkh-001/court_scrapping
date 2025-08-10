@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>home</title>
+</head>
+<body>
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+    <form method="POST" action="form_submit">
+        {% csrf_token %}
+        <label>Case Type : </label>
+        <select name="case_type">
+        {% for option in values %}
+        <option value="{{option}}">{{option}}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <br>
+
+        <label>Case Number : </label>
+        <input type="int" name="case_number" ></input>
+        <br>
+        <br>
+        <label>Year : </label>
+        <select name="years">
+        {% for year in years %}
+        <option value="{{year}}">{{year}}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

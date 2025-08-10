@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>result</title>
+</head>
+<body>
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+    <table border="1">
+        <thead>
+            <tr>
+                {% for heading in  head%}
+                <th>{{heading}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
